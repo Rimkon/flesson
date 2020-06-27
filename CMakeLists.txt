@@ -7,6 +7,8 @@ cmake_minimum_required (VERSION 3.2)                                            
           find_package (Threads REQUIRED)                                       # 
           find_package (Boost   COMPONENTS unit_test_framework REQUIRED)        # 
 
+link_directories(${LINK_DIRECTORIES} ${FUSE_LIBRARY_DIR})
+
         configure_file (version.h.in ${PROJECT_SOURCE_DIR}/version.h)           # 
 
            add_library (helloworld_lib            lib.cpp)                      # 
