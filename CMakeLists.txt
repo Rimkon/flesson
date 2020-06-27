@@ -1,9 +1,24 @@
 
-cmake_minimum_required (VERSION 3.2)                                            # минимальная версия cmake 3.2
+cmake_minimum_required (VERSION 3.2)                                            #
 
-               project (my_tutor_first VERSION 0.0.1$ENV{TRAVIS_BULD_NUMBER})   # название используется в travis TRAVIS_BUILD_NUMBER это номер сборки
+               project (my_tutor_first VERSION 0.0.1$ENV{TRAVIS_BULD_NUMBER})   #
+
                                                                                 # 
-          find_package (spdlog  REQUIRED)                                       # 
+if (NOT TARGET spdlog)                                                   
+          find_package (spdlog CONFIG REQUIRED )                                  
+endif ()                                                                 
+
+if (spdlog_FOUND)
+               message (STATUS "   статус spdlog: ${spdlog_FOUND}")
+               message (STATUS "   путь к spdlog: ${spdlog_DIR}")
+               message (STATUS " congig к spdlog: ${spdlog_CONFIG}")
+               message (STATUS "congigs к spdlog: ${spdlog_CONSIDERED_CONFIGS}")
+               message (STATUS "congigs к spdlog: ${spdlog_CONSIDERED_VERSIONS}")
+
+endif()
+
+
+
           find_package (Threads REQUIRED)                                       # 
           find_package (Boost   COMPONENTS unit_test_framework REQUIRED)        # 
 
