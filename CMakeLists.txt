@@ -3,7 +3,18 @@ cmake_minimum_required (VERSION 3.2)                                            
 
                project (my_tutor_first VERSION 0.0.1$ENV{TRAVIS_BULD_NUMBER})   # название используется в travis TRAVIS_BUILD_NUMBER это номер сборки
                                                                                 # 
-          find_package (spdlog  REQUIRED)                                       # 
+
+
+                                                                        
+if(NOT TARGET spdlog)                                                   
+  # Stand-alone build                                                   
+  find_package(spdlog CONFIG REQUIRED)                                  
+endif()                                                                 
+                                                                        
+
+
+
+#find_package (spdlog  REQUIRED)                                       # 
           find_package (Threads REQUIRED)                                       # 
           find_package (Boost   COMPONENTS unit_test_framework REQUIRED)        # 
 
