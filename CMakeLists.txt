@@ -7,7 +7,7 @@ set(CMAKE_MODULE_PATH
                ${CMAKE_MODULE_PATH}
               "${CMAKE_CURRENT_SOURCE_DIR}")
               
-          find_package (spdlog MODULE QUIRED )                                  
+          find_package (spdlog MODULE REQUIRED )                                  
 
 if (spdlog_FOUND)
                message (STATUS "   статус spdlog: ${spdlog_FOUND}")
