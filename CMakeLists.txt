@@ -4,6 +4,7 @@ cmake_minimum_required (VERSION 3.2)                                            
                project (my_tutor_first VERSION 0.0.1$ENV{TRAVIS_BULD_NUMBER})   #
 
                                                                                 # 
+<<<<<<< HEAD
 if (NOT TARGET spdlog)                                                   
           find_package (spdlog CONFIG REQUIRED )                                  
 endif ()                                                                 
@@ -19,6 +20,20 @@ endif()
 
 
 
+=======
+
+
+                                                                        
+if(NOT TARGET spdlog)                                                   
+  # Stand-alone build                                                   
+  find_package(spdlog CONFIG REQUIRED)                                  
+endif()                                                                 
+                                                                        
+
+
+
+#find_package (spdlog  REQUIRED)                                       # 
+>>>>>>> aa0b41dc280098b999f2fbfb8d439ea7874f6bc9
           find_package (Threads REQUIRED)                                       # 
           find_package (Boost   COMPONENTS unit_test_framework REQUIRED)        # 
 
