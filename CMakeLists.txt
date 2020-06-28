@@ -4,7 +4,7 @@ cmake_minimum_required (VERSION 3.2)                                            
                project (my_tutor_first VERSION 0.0.1$ENV{TRAVIS_BULD_NUMBER})   #
 
 if (NOT TARGET spdlog)                                                   
-          find_package (spdlog CONFIG REQUIRED )                                  
+          find_package (spdlog QUIRED )                                  
 endif ()                                                                 
 
 if (spdlog_FOUND)
