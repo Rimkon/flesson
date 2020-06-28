@@ -13,8 +13,11 @@ if (spdlog_FOUND)
                message (STATUS " congig к spdlog: ${spdlog_CONFIG}")
                message (STATUS "congigs к spdlog: ${spdlog_CONSIDERED_CONFIGS}")
                message (STATUS "congigs к spdlog: ${spdlog_CONSIDERED_VERSIONS}")
-
 endif()
+if (NOT TARGET spdlog_FOUND)                                                   
+          message (STATUS "   статус spdlog: ${spdlog_FOUND}")                                  
+endif ()   
+
           find_package (Threads REQUIRED)                                       # 
           find_package (Boost   COMPONENTS unit_test_framework REQUIRED)        # 
 
